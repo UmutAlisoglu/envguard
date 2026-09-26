@@ -70,7 +70,7 @@ escapes in double quotes, multi-line double-quoted values (PEM keys) and inline
 Check the job's real environment against the committed template:
 
 ```yaml
-- uses: UmutAlisoglu/envguard@v0.1.0
+- uses: UmutAlisoglu/envguard@main
   with:
     args: --process-env --strict
 ```
