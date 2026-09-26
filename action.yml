@@ -1,0 +1,17 @@
+name: envguard
+description: Check a .env file (or the job's environment) against .env.example
+branding:
+  icon: shield
+  color: green
+inputs:
+  args:
+    description: Arguments passed to envguard, e.g. "--process-env --strict"
+    required: false
+    default: "--process-env"
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: pip install --quiet "${{ github.action_path }}"
+    - shell: bash
+      run: envguard --format github ${{ inputs.args }}

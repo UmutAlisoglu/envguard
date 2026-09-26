@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "envguard"
+dynamic = ["version"]
+description = "Check a .env file against .env.example: missing, extra, empty and duplicate keys."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Druomi" }]
+requires-python = ">=3.9"
+keywords = ["dotenv", "env", "cli", "ci", "config"]
+classifiers = [
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/UmutAlisoglu/envguard"
+
+[project.scripts]
+envguard = "envguard.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "envguard.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
